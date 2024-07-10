@@ -10,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -24,7 +25,7 @@ public class Produto {
 	@Size(min = 5, max = 100, message = "O atributo nome deve conter entre 5 e 100 caracteres!")
 	private String nome;
 	
-	@NotBlank(message = "O atributo preço é obrigatório")
+	@NotNull(message = "O atributo preço é obrigatório")
 	private Float preco;
 	
 	@UpdateTimestamp
